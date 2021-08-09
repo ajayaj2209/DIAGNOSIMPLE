@@ -1,0 +1,311 @@
+{% extends 'base.html' %}
+{% block title %}Prediction{% endblock %}
+{% block content %}
+<meta charset = "UTF-8" />
+<div class="card">
+   <img src="https://wallpapercave.com/wp/wp7376904.jpg" class="img-fluid img-thumbnail" alt="smaple image" >
+   <div class="card-img-overlay overlay-dark text-white d-flex " style="background: rgba(0,0,0,.2)">             
+       <div class="card-body">
+      
+  <div class="jumbotron">
+  <h1 class="display-4" id = "scrollspyHeading1">Coronary Heart Disease:</h1>
+  <p class="lead" style="word-spacing: 3px;line-height: 1.6;"> Coronary heart disease  is  often caused by the buildup of plaque, a waxy substance, inside the lining of larger coronary arteries. This buildup can partially or totally block blood flow in the large arteries of the heart. Some types of this condition may be caused by disease or injury affecting how the arteries work in the heart. Coronary microvascular disease is another type of coronary heart disease. It occurs when the heart’s tiny blood vessels do not work normally.</p>
+  <hr class="my-4">
+ <br />
+  <p class="lead"> 
+  
+       </div>
+       
+        <h3 class="display-6" id = "#scrollspyHeading1">Angiography</h3>
+        <p class="lead" style="word-spacing: 3px;line-height: 1.6;"> Angiography is an imaging test that uses X-rays to view your body's blood vessels. The X-rays provided by an angiography are called angiograms. This test is used to study many parts in your body especially heart.</p>
+   <br />
+    <hr class="my-4">
+  <br />
+  <h3 class="display-6" id = "#scrollspyHeading1">Thalassemia</h3>
+        <p class="lead" style="word-spacing: 3px;line-height: 1.6;" > Thalassemia is an inherited blood disorder that causes your body to have less hemoglobin than normal. Hemoglobin enables red blood cells to carry oxygen. Thalassemia can cause anemia, leaving you fatigued..</p>
+    
+    
+    
+    <h1 class="lead text-center" id = "scrollspyHeading1" >SCROLL DOWN &#11015</h1>
+  </div>
+  
+        
+</div>
+</div>
+<div class="container">
+<div class="p-5 text-center bg-light" id="chd">
+    <h1 class="mb-3">PREDICTION</h1>
+    <h4 class="mb-3">Find out whether patient is affected by CHD by entering <br />patient details and Results of Coronary Angiography.</h4>
+</div>
+
+
+
+<!-- Form -->
+
+<form id="myForm" method="POST" >
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input type="number" class="form-control" id="age"  name ="age" aria-required="true" placeholder="Enter Age of patient." required />
+  </div>
+
+  
+  <!-- chuma -->
+  
+<fieldset class="form-group">
+   <div class="row">
+   <legend class="col-form-label col-sm-2 pt-0">Sex</legend>
+    <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sex" id="gridRadios1" value=1 required>
+          <label class="form-check-label" for="gridRadios1">
+            Male 
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sex" id="gridRadios2" value=0>
+          <label class="form-check-label" for="gridRadios2">
+            Female
+          </label>
+        </div>
+      </div>
+    </div>
+</fieldset>
+          
+<br />    
+  
+<fieldset class="form-group">
+   <div class="row">
+   <legend class="col-form-label col-sm-2 pt-0">Chest pain type</legend>
+    <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="cp" id="gridRadios1" value=0 required>
+          <label class="form-check-label" for="gridRadios1">
+            Typical Angina
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="cp" id="gridRadios2" value=1 >
+          <label class="form-check-label" for="gridRadios2">
+            Atypical Angina
+          </label>
+        </div>
+        
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="cp" id="gridRadios3" value=2 >
+          <label class="form-check-label" for="gridRadios3">
+            Non-anginal Pain
+          </label>
+        </div>
+        
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="cp" id="gridRadios4" value=3 >
+          <label class="form-check-label" for="gridRadios4">
+            Asymptotic 
+          </label>
+        </div>
+      </div>
+    </div>
+     <small id="ageHelp" class="form-text">Choose the type of chest pain.</small>
+</fieldset>
+
+<br />
+
+
+<div class="form-group">
+    <label for="bp">Blood Presure</label>
+    <input type="number" class="form-control" id="bp" name="bp" placeholder="Enter Systolic Blood Pressure reading " required>
+     <small id="bp1" class="form-text">Note: |Normal < 120|  |Prehypertension 120-139|  |Stage 1 HyperTension 140-159 |  | Stage 2 Hypertension >159|  </small>
+  </div>
+
+<br />
+
+<div class="form-group">
+    <label for="chol">Cholestrol Level</label>
+    <input type="number" class="form-control" id="chol" name="chol"  placeholder="Enter Total Cholestrol level " required>
+     <small id="bp1" class="form-text">Note:|Desirable <200 |Borderline 200-240 | High risk >240 | </small> 
+  </div>
+
+<br />
+
+<fieldset class="form-group">
+   <div class="row">
+   <legend class="col-form-label col-sm-2 pt-0">Blood Sugar level </legend>
+    <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="bs" id="bs1" value=1 required>
+          <label class="form-check-label" for="bs1">
+            Greater than 120 mg/dl
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="bs" id="bs2" value=0>
+          <label class="form-check-label" for="bs2">
+            Lesser than 120 mg/dl
+          </label>
+        </div>
+      </div>
+    </div>
+    <small id="bs3" class="form-text">Blood Sugar Level taken in fasting state.</small>
+</fieldset>
+          
+<br />    
+
+
+<fieldset class="form-group">
+   <div class="row">
+   <legend class="col-form-label col-sm-2 pt-0">ECG result</legend>
+    <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ec" id="ec1" value=0 required>
+          <label class="form-check-label" for="ec1">
+            Showing Probable 
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ec" id="ec2" value=1>
+          <label class="form-check-label" for="ec2">
+            Normal
+          </label>
+        </div>
+        
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ec" id="ec3" value=2>
+          <label class="form-check-label" for="ec3">
+            Having ST-T wave abnormality
+          </label>
+        </div>
+      </div>
+    </div>
+</fieldset>
+          
+<br />   
+
+
+<div class="form-group">
+    <label for="hb">Heart beat Rate </label>
+    <input type="number" class="form-control" id="hb" name="hb" placeholder="Enter Heart beat rate per minute " required>
+     
+  </div>
+
+<br />
+
+
+
+<div class="jumbotron">
+  <h1 class="display-6">Exercise and Angiography results:</h1> 
+    <a class="nav-link" href="#scrollspyHeading1" >Information click here</a>
+</div>
+<br />
+
+
+
+
+<fieldset class="form-group">
+   <div class="row">
+   <legend class="col-form-label col-sm-2 pt-0">Exercise Induced Angina?  </legend>
+    <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ex" id="ex1" value=1 required>
+          <label class="form-check-label" for="ex1">
+            Yes
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ex" id="ex2" value=0>
+          <label class="form-check-label" for="ex2">
+             No
+          </label>
+        </div>
+      </div>
+    </div>
+</fieldset>
+          
+<br />    
+
+
+
+
+<div class="form-group">
+    <label for="bp">ST depression induced by exercise</label>
+    <input type="number" class="form-control" id="ang" name="ang" placeholder="Enter depression rate in  ECG " required>
+     <small id="bp1" class="form-text">Noted in ECG plot. Range (0-6)</small>
+  </div>
+  
+<br />
+
+  <fieldset class="form-group">
+   <div class="row">
+   <legend class="col-form-label col-sm-2 pt-0">slope of the peak exercise ST segment </legend>
+    <div class="col-sm-10">
+        <div class="form-check" required>
+          <input class="form-check-input" type="radio" name="sl" id="sl1" value=0 >
+          <label class="form-check-label" for="sl1">
+            Downsloping
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sl" id="sl2" value=1>
+          <label class="form-check-label" for="sl2">
+            Flat
+          </label>
+        </div>
+        
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sl" id="sl3" value=2>
+          <label class="form-check-label" for="sl3">
+            Upsloping
+          </label>
+        </div>
+      </div>
+    </div>
+    <small id="bs4" class="form-text">Noted in ECG plot</small>
+</fieldset>
+
+<br />
+
+ <div class="form-group">
+    <label for="ves">No of major vessels</label>
+    <select class="form-control" id="ves" name = "ves" required>
+      <option>0</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+    <small id="bs5" class="form-text">Enter no of vessels shown in Angiography</small>
+  </div>
+  
+<div class="form-group">
+    <label for="ves">Thalassemia Result</label>
+    <select class="form-control" id="thl" name = "thl" required>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+    <small id="bs5" class="form-text">|1- fixed defect| 2- normal blood flow| 3-reversible defect|</small>
+  </div>
+  
+<br />
+<div class="d-grid gap-2">
+
+  <button type="submit" data-target="#model" class="btn btn-primary btn-lg btn-block" > Predict</button>
+  </div>
+</form>
+<br />
+
+<div class="container">
+<div class="p-5 text-center bg-light">
+    <h1 class="mb-3"> {{txt}} </h1>
+    <h4 class="mb-3"> {{txt1}}</h4>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
